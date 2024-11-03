@@ -1,5 +1,5 @@
-class database {
-            " \n" +
+open class database {
+           val text:String=" \n" +
             "Она сидела на полу\n" +
             "И груду писем разбирала,\n" +
             "И, как остывшую золу,\n" +

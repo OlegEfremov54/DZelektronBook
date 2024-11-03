@@ -9,6 +9,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.snackbar.Snackbar
+import database
 
 
 class MainActivity : AppCompatActivity() {
@@ -36,37 +37,15 @@ class MainActivity : AppCompatActivity() {
         inputDataBTN=findViewById(R.id.inputDataBTN)
 
         inputDataBTN.setOnClickListener{view ->
-            val inputData ="Я пришел к тебе с приветом,\n" +
-                "Рассказать, что солнце встало,\n" +
-                "Что оно горячим светом\n" +
-                "По листам затрепетало;\n" +
-                "\n" +
-                "Рассказать, что лес проснулся,\n" +
-                "Весь проснулся, веткой каждой,\n" +
-                "Каждой птицей встрепенулся\n" +
-                "И весенней полон жаждой;\n" +
-                "\n" +
-                "Рассказать, что с той же страстью,\n" +
-                "Как вчера, пришел я снова,\n" +
-                "Что душа все так же счастью\n" +
-                "И тебе служить готова;\n" +
-                "\n" +
-                "Рассказать, что отовсюду\n" +
-                "На меня весельем веет,\n" +
-                "Что не знаю сам, что буду\n" +
-                "Петь — но только песня зреет."
+            val inputData =loadBook().toString()
             textTV.text = inputData
             Snackbar.make(view, "Данные загружены", Snackbar.LENGTH_SHORT).show()
         }
 
 
+
     }
 
-    fun loadBook(text: String): List<String>{
-        var srt = mutableListOf<String>()
-
-
-    return srt
-    }
+    fun loadBook()= database().text.split(" ")
 
 }
